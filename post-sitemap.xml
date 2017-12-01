@@ -7,8 +7,16 @@
     </url>
 
     <url>
-        <loc>http://euntak.github.io/2017/10/25/typescript-basic-1/</loc>
-        <lastmod>2017-12-01T06:31:51.000Z</lastmod>
+        <loc>http://euntak.github.io/2017/12/01/typescript-basic-type-md/</loc>
+        <lastmod>2017-12-01T09:53:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://euntak.github.io/2017/12/01/typescript-intro/</loc>
+        <lastmod>2017-12-01T06:45:11.193Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
