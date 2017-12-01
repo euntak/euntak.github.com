@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Javascript Function | euntak.github.io</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Javascript">
+    
+    <meta name="description" content="Javascript Function Definition자바스크립트에서의 함수를 정의하는 방법에 대해서 알아보도록 하겠습니다.  Function Declaration Function Expression new Function(param1, param2, body) 객체로 생성하기  Fun">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript Function">
+<meta property="og:url" content="http://euntak.github.io/2017/10/20/javascript-function-definition/index.html">
+<meta property="og:site_name" content="euntak.github.io">
+<meta property="og:description" content="Javascript Function Definition자바스크립트에서의 함수를 정의하는 방법에 대해서 알아보도록 하겠습니다.  Function Declaration Function Expression new Function(param1, param2, body) 객체로 생성하기  Function Declaration (함수 선언문)function book(">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://euntak.github.io/images/javascript.svg">
+<meta property="og:updated_time" content="2017-11-28T14:55:55.537Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript Function">
+<meta name="twitter:description" content="Javascript Function Definition자바스크립트에서의 함수를 정의하는 방법에 대해서 알아보도록 하겠습니다.  Function Declaration Function Expression new Function(param1, param2, body) 객체로 생성하기  Function Declaration (함수 선언문)function book(">
+<meta name="twitter:image" content="http://euntak.github.io/images/javascript.svg">
+    
+    <link rel="canonical" href="http://euntak.github.io/2017/10/20/javascript-function-definition/">    
+
+    
+        <link rel="alternate" href="https://euntak.github.io/feed.xml" title="euntak.github.io" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-89280161-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1>
+                        <a href="/" style="font-size:50px;color:#fff; text-decoration: none;">euntak.github.io</a>
+                    </h1>
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://about.me/sungtak.ryu" rel="external nofollow noopener noreferrer" target="_blank">about</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Javascript/">Javascript</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-javascript-function-definition" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Javascript Function
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/10/20/javascript-function-definition/" class="article-date">
+            <time datetime="2017-10-19T15:00:00.000Z" itemprop="datePublished">2017-10-20</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Javascript/">Javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="Javascript-Function-Definition"><a href="#Javascript-Function-Definition" class="headerlink" title="Javascript Function Definition"></a>Javascript Function Definition</h1><p>자바스크립트에서의 함수를 정의하는 방법에 대해서 알아보도록 하겠습니다.</p>
+<ul>
+<li>Function Declaration</li>
+<li>Function Expression</li>
+<li>new Function(param1, param2, body) 객체로 생성하기</li>
+</ul>
+<h3 id="Function-Declaration-함수-선언문"><a href="#Function-Declaration-함수-선언문" class="headerlink" title="Function Declaration (함수 선언문)"></a>Function Declaration (함수 선언문)</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">book</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'JS'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Function-Expression-함수-표현식"><a href="#Function-Expression-함수-표현식" class="headerlink" title="Function Expression (함수 표현식)"></a>Function Expression (함수 표현식)</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> outside = <span class="function"><span class="keyword">function</span> <span class="title">inside</span>(<span class="params">param</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(param === <span class="number">102</span>) <span class="keyword">return</span> param;</span><br><span class="line">    <span class="keyword">return</span> inside(param + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(outside(<span class="number">100</span>));</span><br></pre></td></tr></table></figure>
+<p>자바스크립트 엔진이 해석하는 KEY VALUE 변경 해보면 { outside : { indide : Funtion Object } }</p>
+<h3 id="함수-선언문과-표현식의-차이"><a href="#함수-선언문과-표현식의-차이" class="headerlink" title="함수 선언문과 표현식의 차이"></a>함수 선언문과 표현식의 차이</h3><p>가장 큰 차이점은 <code>Hoisting</code>에 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">deff(); <span class="comment">// called deff</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deff</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'called deff'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">geff(); <span class="comment">// error!</span></span><br><span class="line"><span class="keyword">var</span> geff = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'called geff'</span>);</span><br><span class="line">&#125;</span><br><span class="line">geff(); <span class="comment">// called geff</span></span><br></pre></td></tr></table></figure>
+<p>위와 같은 예제에서, <code>deff</code>와 <code>geff</code> 두 함수를 호출할 때에, 함수 표현식으로 선언이 된 geff는 익명의함수가 할당된 다음에 geff()를 호출하게 되면, 정상적으로 작동이 되게 됩니다.</p>
+<p>함수 선언문은 Function Object가 Key, Value로 등록되는 특징상 같은 실행 컨텍스트에서 함수의 이름을 중복해서 작성 할 수 없기 때문에 함수 표현식으로 <code>Namespace</code>를 이용해서 이와 같은 문제를 해결 할 수 있습니다.</p>
+<blockquote>
+<p>함수 선언문은 Hoisting이 되기 때문에, Global Scope로 Function Object가 등록이 되어 어디서든지 사용할 수 있게 되고, 함수 표현식은 Hoisting이 되지 않기 때문에, 해당 변수에 함수를 할당하는 과정 이후에만 사용 할 수 있다.</p>
+</blockquote>
+<h3 id="함수-선언문-오버라이딩"><a href="#함수-선언문-오버라이딩" class="headerlink" title="함수 선언문 오버라이딩"></a>함수 선언문 오버라이딩</h3><p>함수 이름이 같을 때 함수 코드 대체 (replace)</p>
+<ul>
+<li>JS는 파라미터 수, 데이터 타입을 체크하지 않는다<ul>
+<li>Why? Function Object는 {key : value} 형식으로 저장되기 때문</li>
+<li>고로 Function Signiture는 <strong>Only 함수 이름</strong> </li>
+</ul>
+</li>
+<li>초기화 단계에서 함수 선언문을 <code>Funtion Object</code>로 생성</li>
+<li>코드 진행 중, 아래에 이름이 같은 함수 선언문이 있으면 <code>Overriding (replace)</code>된다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">first</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'first'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">first</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'second'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(first()); <span class="comment">// second</span></span><br></pre></td></tr></table></figure>
+<h3 id="Do-it"><a href="#Do-it" class="headerlink" title="Do it"></a>Do it</h3><p>다음과 같이 코드를 작성 했을 때에 예상 결과를 한번 생각해보기.</p>
+<ol>
+<li>함수 선언문 - <code>first()</code> - 함수 선언문</li>
+<li>함수 표현식 - <code>second()</code> - 함수 표현식</li>
+<li>함수 선언문 - <code>third()</code> - 함수 표현식</li>
+<li>함수 표현식 - <code>fourth()</code> - 함수 선언문</li>
+</ol>
+<p><code>debugger;</code>를 통해서 실행 Context 및 순서 확인하기</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">debugger</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">first</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'first'</span>); &#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(first());</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">first</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'first2'</span>); &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> second = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'second'</span>); &#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(second());</span><br><span class="line">    <span class="keyword">var</span> second = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'second2'</span>); &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">third</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'third'</span>); &#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(third());</span><br><span class="line">    <span class="keyword">var</span> third = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'third2'</span>); &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> fourth = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'fourth'</span>); &#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(fourth());</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fourth</span> (<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'fourth2'</span>); &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1, 4번의 경우에는 <code>Function Overriding</code>이 일어 난다. 때문에, 함수 표현식에서의 <code>fourth</code>의 값이 JS 엔진에 의해서 초기화 될 때에 <code>undefined</code>가 아닌 이전의 함수 선언문에서 정의 했던 <code>FO</code>가 초기 값이 된다.</p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://euntak.github.io/2017/10/20/javascript-function-definition/" data-id="cjanbxeg200005ivgezwsbb1p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/euntak" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="https://euntak.github.io/feed.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="euntak" data-width="" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/10/25/typescript-basic-1/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Typescript Intro
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/10/20/javascript-hoisting/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Javascript Hoisting</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/25/typescript-basic-1/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/typescript.svg)" alt="Typescript Intro" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Typescript/">Typescript</a></p>
+                            <p class="item-title"><a href="/2017/10/25/typescript-basic-1/" class="title">Typescript Intro</a></p>
+                            <p class="item-date"><time datetime="2017-10-24T15:00:00.000Z" itemprop="datePublished">2017-10-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/20/javascript-function-definition/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/javascript.svg)" alt="Javascript Function" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2017/10/20/javascript-function-definition/" class="title">Javascript Function</a></p>
+                            <p class="item-date"><time datetime="2017-10-19T15:00:00.000Z" itemprop="datePublished">2017-10-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/20/javascript-hoisting/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/javascript.svg)" alt="Javascript Hoisting" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2017/10/20/javascript-hoisting/" class="title">Javascript Hoisting</a></p>
+                            <p class="item-date"><time datetime="2017-10-19T15:00:00.000Z" itemprop="datePublished">2017-10-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/19/javascript-this/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/javascript.svg)" alt="Javascript에서의 This" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a></p>
+                            <p class="item-title"><a href="/2017/10/19/javascript-this/" class="title">Javascript에서의 This</a></p>
+                            <p class="item-date"><time datetime="2017-10-19T07:00:00.000Z" itemprop="datePublished">2017-10-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Typescript/">Typescript</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Typescript/" style="font-size: 10px;">Typescript</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://www.protopie.io/" rel="external nofollow noopener noreferrer" target="_blank">Protopie</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 euntak</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'trofleveuntak';
+    
+    
+    var disqus_url = 'http://euntak.github.io/2017/10/20/javascript-function-definition/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+
