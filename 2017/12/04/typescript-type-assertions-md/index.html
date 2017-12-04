@@ -3,28 +3,28 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Javascript에서의 This | euntak.github.io</title>
+    <title>Type Assertion | euntak.github.io</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Javascript">
+        <meta name="keywords" content="Typescript">
     
-    <meta name="description" content="Javscript의 This에 대해서 알아보도록 합시다Javascript를 배우면서 this 키워드에 대한 이해가 정말 부족하다고 느꼈었습니다. 특히나.. 변할 수 있기 때문입니다.Javascript에서 간단하게 this를 구별할 수 있는 방법, this를 적절하게 사용할 수 있는 방법">
-<meta name="keywords" content="Javascript">
+    <meta name="description" content="Type AssertionType Assertion은 쉽게 말해 Typescript Compiler에게 이녀석의 타입은 이것이야라고 알려주는 것을 의미한다.  개발자 - 내가 이녀석의 타입을 더 잘 아니까 넌 내가 정한 타입에 토달지 말고 컴파일이나 열심히해컴파일러 - OK! 대신에 런">
+<meta name="keywords" content="Typescript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript에서의 This">
-<meta property="og:url" content="http://euntak.github.io/2017/10/19/javascript-this/index.html">
+<meta property="og:title" content="Type Assertion">
+<meta property="og:url" content="http://euntak.github.io/2017/12/04/typescript-type-assertions-md/index.html">
 <meta property="og:site_name" content="euntak.github.io">
-<meta property="og:description" content="Javscript의 This에 대해서 알아보도록 합시다Javascript를 배우면서 this 키워드에 대한 이해가 정말 부족하다고 느꼈었습니다. 특히나.. 변할 수 있기 때문입니다.Javascript에서 간단하게 this를 구별할 수 있는 방법, this를 적절하게 사용할 수 있는 방법에 대해서 알아둬야 할 것 같습니다. 객체에서 function을 호출 할">
+<meta property="og:description" content="Type AssertionType Assertion은 쉽게 말해 Typescript Compiler에게 이녀석의 타입은 이것이야라고 알려주는 것을 의미한다.  개발자 - 내가 이녀석의 타입을 더 잘 아니까 넌 내가 정한 타입에 토달지 말고 컴파일이나 열심히해컴파일러 - OK! 대신에 런타임 에러나면 니 책임극단적인 대화지만… 그만큼 개발자(작성자)가 100">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://euntak.github.io/images/javascript.svg">
-<meta property="og:updated_time" content="2017-11-28T14:55:55.538Z">
+<meta property="og:image" content="http://euntak.github.io/images/typescript.svg">
+<meta property="og:updated_time" content="2017-12-04T16:51:55.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript에서의 This">
-<meta name="twitter:description" content="Javscript의 This에 대해서 알아보도록 합시다Javascript를 배우면서 this 키워드에 대한 이해가 정말 부족하다고 느꼈었습니다. 특히나.. 변할 수 있기 때문입니다.Javascript에서 간단하게 this를 구별할 수 있는 방법, this를 적절하게 사용할 수 있는 방법에 대해서 알아둬야 할 것 같습니다. 객체에서 function을 호출 할">
-<meta name="twitter:image" content="http://euntak.github.io/images/javascript.svg">
+<meta name="twitter:title" content="Type Assertion">
+<meta name="twitter:description" content="Type AssertionType Assertion은 쉽게 말해 Typescript Compiler에게 이녀석의 타입은 이것이야라고 알려주는 것을 의미한다.  개발자 - 내가 이녀석의 타입을 더 잘 아니까 넌 내가 정한 타입에 토달지 말고 컴파일이나 열심히해컴파일러 - OK! 대신에 런타임 에러나면 니 책임극단적인 대화지만… 그만큼 개발자(작성자)가 100">
+<meta name="twitter:image" content="http://euntak.github.io/images/typescript.svg">
     
-    <link rel="canonical" href="http://euntak.github.io/2017/10/19/javascript-this/">    
+    <link rel="canonical" href="http://euntak.github.io/2017/12/04/typescript-type-assertions-md/">    
 
     
         <link rel="alternate" href="https://euntak.github.io/feed.xml" title="euntak.github.io" type="application/atom+xml">
@@ -140,18 +140,18 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Javascript/">Javascript</a>
+    <a class="page-title-link" href="/categories/Typescript/">Typescript</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-javascript-this" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-typescript-type-assertions-md" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Javascript에서의 This
+        Type Assertion
         </h1>
     
 
@@ -161,55 +161,44 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/10/19/javascript-this/" class="article-date">
-            <time datetime="2017-10-19T07:00:00.000Z" itemprop="datePublished">2017-10-19</time>
+        <a href="/2017/12/04/typescript-type-assertions-md/" class="article-date">
+            <time datetime="2017-12-04T12:57:01.000Z" itemprop="datePublished">2017-12-04</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Javascript/">Javascript</a>
+        <a class="tag-link" href="/tags/Typescript/">Typescript</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="Javscript의-This에-대해서-알아보도록-합시다"><a href="#Javscript의-This에-대해서-알아보도록-합시다" class="headerlink" title="Javscript의 This에 대해서 알아보도록 합시다"></a>Javscript의 This에 대해서 알아보도록 합시다</h1><p>Javascript를 배우면서 <code>this</code> 키워드에 대한 이해가 정말 부족하다고 느꼈었습니다. 특히나.. <code>변할 수 있기 때문</code>입니다.<br>Javascript에서 간단하게 <code>this</code>를 구별할 수 있는 방법, <code>this</code>를 적절하게 사용할 수 있는 방법에 대해서 알아둬야 할 것 같습니다.</p>
-<h3 id="객체에서-function을-호출-할-때에-다음과-같이-합니다"><a href="#객체에서-function을-호출-할-때에-다음과-같이-합니다" class="headerlink" title="객체에서 function을 호출 할 때에 다음과 같이 합니다."></a>객체에서 function을 호출 할 때에 다음과 같이 합니다.</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app = &#123;</span><br><span class="line">    init : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// (함수에서 this는 호출하는 주체) 즉, app.init()에서  `.` 앞에 함수를 호출하는 주체가 되는 것이 `this` 대상입니다.</span></span><br><span class="line">app.init();</span><br></pre></td></tr></table></figure>
-<p>위와 같이 있을 때에, <code>init()</code> 내부의 this는 app객체가 되는 것입죠</p>
-<h3 id="그렇다면-호출하는-주체가-없을-때의-this"><a href="#그렇다면-호출하는-주체가-없을-때의-this" class="headerlink" title="그렇다면, 호출하는 주체가 없을 때의 this"></a>그렇다면, 호출하는 주체가 없을 때의 <code>this</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// 너는 무엇이니</span></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 주체가 없으면 this == window</span></span><br></pre></td></tr></table></figure>
-<p>다음과 같이 <code>setTimeout()</code>, <code>setInterval()</code>과 같은 함수 내에 callback 함수에서의 <code>this</code>는 <strong><code>window</code></strong> 객체를 가리키게 됩니다!</p>
-<h3 id="변할-수-있는-this의-결정-시기"><a href="#변할-수-있는-this의-결정-시기" class="headerlink" title="변할 수 있는 this의 결정 시기"></a><strong>변할 수 있는 this</strong>의 결정 시기</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// this는 호출 할 때에 결정 된다. 단, 한번 결정되면 함수가 종료될때까지 변경할 수 없다!</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">type, legs</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.type = type;</span><br><span class="line">  <span class="keyword">this</span>.legs = legs;</span><br><span class="line">  <span class="keyword">this</span>.logInfo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span> === myCat); <span class="comment">// =&gt; false</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'The '</span> + <span class="keyword">this</span>.type + <span class="string">' has '</span> + <span class="keyword">this</span>.legs + <span class="string">' legs'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> myCat = <span class="keyword">new</span> Animal(<span class="string">'Cat'</span>, <span class="number">4</span>);</span><br><span class="line"><span class="comment">// "The undefined has undefined legs" 출력</span></span><br><span class="line"><span class="comment">// 혹은 엄격모드라면 TypeError 출력</span></span><br><span class="line">setTimeout(myCat.logInfo, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-<p>아마도 setTimeout으로 myCat.logInfo()를 호출할 때, myCat 객체가 출력될 거라고 예상할 수 있습니다. 하지만 setTimeout의 매개변수로 전달되었기 때문에 메소드는 객체로부터 분리 되어있고, 1초 뒤 함수 실행이 되기 때문에, logInfo가 함수로써 실행되기 때문에 여기서의 this는 전역 객체이거나 엄격 모드에서라면 undefined가 됩니다.<br>그렇기 때문에 객체의 정보를 기대한 것대로 출력하지 못합니다.</p>
-<h2 id="this를-고정하는자-bind"><a href="#this를-고정하는자-bind" class="headerlink" title="this를 고정하는자 bind()"></a>this를 고정하는자 bind()</h2><p><code>this</code>를 고정하는 방법에는 여러가지가 있는데, 처음으로 살펴볼 아이는 <code>bind()</code>입니다.</p>
-<p>함수는 <code>bind()</code> 메소드를 사용해 Context(문맥)을 강제로 지정시킬 수 있습니다. 아래와 같이 분리된 메소드가 myCat 객체로 바인딩 된다면 이 문제는 아주 간단하게 해결 할 수 있습니다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">type, legs</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.type = type;</span><br><span class="line">  <span class="keyword">this</span>.legs = legs;</span><br><span class="line">  <span class="keyword">this</span>.logInfo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span> === myCat); <span class="comment">// =&gt; true</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'The '</span> + <span class="keyword">this</span>.type + <span class="string">' has '</span> + <span class="keyword">this</span>.legs + <span class="string">' legs'</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> myCat = <span class="keyword">new</span> Animal(<span class="string">'Cat'</span>, <span class="number">4</span>);</span><br><span class="line"><span class="comment">// "The Cat has 4 legs" 출력</span></span><br><span class="line">setTimeout(myCat.logInfo.bind(myCat), <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-<p>myCat.logInfo.bind(myCat)는 함수 실행임에도 불구하고, bind()는 return 값이 <strong>함수</strong> 이기 때문에, 첫번째 인자로 등록된 myCat이 주체가 되어 this값을 myCat객체에 고정시켜주는 역할을 하는 것을 볼 수 있습니다.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> Module = &#123;</span><br><span class="line">    init : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.bindEvents();</span><br><span class="line">    &#125;,</span><br><span class="line">    bindEvents : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $( <span class="string">"button"</span> ).on( <span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 여기서의 this는 ELEMENT를 가리킵니다.</span></span><br><span class="line">            $( <span class="keyword">this</span> ).addClass( <span class="string">"active"</span> );</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        $(<span class="string">"h3"</span>).on(<span class="string">"click"</span>, <span class="keyword">this</span>.toggle.bind(<span class="keyword">this</span>, <span class="string">"name"</span>, <span class="string">"props"</span>));</span><br><span class="line">    &#125;,</span><br><span class="line">    toggle : <span class="function"><span class="keyword">function</span>(<span class="params">name, props</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(name, props); <span class="comment">// "name", "props"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// .bind(context, arg1, arg2, ...)</span></span><br></pre></td></tr></table></figure>
-<p>bind()는 this를 고정하는 역할을 하지만 동시에 해당 callback 함수에 arguments들을 나열하여 필요한 정보를 전달 할 수 있습니다.</p>
-<h3 id="this를-고정하지-않고-arguments를-보내는-방법"><a href="#this를-고정하지-않고-arguments를-보내는-방법" class="headerlink" title="this를 고정하지 않고 arguments를 보내는 방법"></a>this를 고정하지 않고 arguments를 보내는 방법</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"h3"</span>).on(<span class="string">"click"</span>, <span class="keyword">this</span>.toggle.bind(<span class="literal">undefined</span>, <span class="string">"name"</span>, <span class="string">"props"</span>));</span><br></pre></td></tr></table></figure>
-<p>위와 같이 첫번째 인자에 undefined나, null과 같이 의미 없는 것을 인자로 전달하게 되면, this는 고정되지 않고, 인자만 전달할 수 있습니다.</p>
-<h2 id="call-VS-apply"><a href="#call-VS-apply" class="headerlink" title="call() VS apply()"></a>call() VS apply()</h2><p>이번에는 <code>call()</code>과 <code>apply()</code>에 대해서 알아보도록 하겠습니다.<br>bind()는 return 값이 함수인 아이였습니다. 때문에, 콜백을 등록하는데에 용이 했습니다.<br>하지만, call()과 apply()는 bind()와 같이 this를 고정 함과 동시에 <code>함수를 호출</code>하는 녀석들입니다.</p>
-<h3 id="call-과-apply-의-차이점"><a href="#call-과-apply-의-차이점" class="headerlink" title="call()과 apply()의 차이점"></a>call()과 apply()의 차이점</h3><p>간단하게 말해서 this를 고정하는건 공통이지만, 그 뒤에 bind()와 같이 인자로 정보를 넘겨줄수 있는 방식에서 차이점이 있습니다. 앞서 살펴본 bind()에서 인자를 전달하는 방법은 <code>순서대로 나열</code> 하는 방식이였습니다.</p>
-<p>call()을 살펴볼까요?</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fun.call(thisArg[, arg1[, arg2[, ...]]])</span><br></pre></td></tr></table></figure>
-<p>apply()를 살펴볼까요?</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fun.apply(thisArg, [argsArray])</span><br></pre></td></tr></table></figure>
-<p>자 이제 둘을 비교해보죠, 먼저 call()은 보시는 것 과 같이, 첫번째 인자로 thisArg를 두번째 인자부터는 arg1,2,3..을 받는 것을 확인 할 수 있습니다. 이는 bind()와 같은 형태로 인자를 받는 다는 것을 알 수 있겠네요!</p>
-<p>한마디로 call()에서 인자를 전달하는 방법은 <code>순서대로 나열</code>하는 방식입니다.</p>
-<p>그 다음, apply()를 살펴보면, 2개의 인자만을 받는데, 첫번째로 thisArg 두번째로는 [argsArray]를 받는 걸로 봐서 인자를 <code>배열 형태</code>로 <code>하나</code>만 받는 것을 알 수 있겠네요!</p>
-<p>한마디로 apply()에서 인자를 전달하는 방법은 <code>여러 가지 인자를 하나의 배열 형태로 받는</code> 방식입니다.</p>
-<h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2><p>this, bind, call, apply등을 알아봤는데, 이번 기회를 통해서 조금 애매했던 기능들의 차이점, 역할에 대해서 조금 더 명확하게 알 수 있었으면 좋겠습니다.</p>
-<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" rel="external nofollow noopener noreferrer" target="_blank">bind</a> </li>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" rel="external nofollow noopener noreferrer" target="_blank">apply</a></li>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/call" rel="external nofollow noopener noreferrer" target="_blank">call</a></li>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this" rel="external nofollow noopener noreferrer" target="_blank">this</a></li>
-<li><a href="https://developer.mozilla.org/ko/docs/Glossary/Hoisting" rel="external nofollow noopener noreferrer" target="_blank">hoisting</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop" rel="external nofollow noopener noreferrer" target="_blank">event loop</a></li>
-</ul>
+            <h1 id="Type-Assertion"><a href="#Type-Assertion" class="headerlink" title="Type Assertion"></a>Type Assertion</h1><p>Type Assertion은 쉽게 말해 Typescript Compiler에게 <code>이녀석의 타입은 이것이야</code>라고 알려주는 것을 의미한다.</p>
+<blockquote>
+<p><strong>개발자 - 내가 이녀석의 타입을 더 잘 아니까 넌 내가 정한 타입에 토달지 말고 컴파일이나 열심히해</strong><br><strong>컴파일러 - OK! 대신에 런타임 에러나면 니 책임</strong><br>극단적인 대화지만… 그만큼 개발자(작성자)가 100% 타입을 확신한다는 가정하에 사용이 되어야 한다.</p>
+</blockquote>
+<h2 id="문법"><a href="#문법" class="headerlink" title="문법"></a>문법</h2><p>Type Assertion의 문법은 다음과 같이 두가지이다.</p>
+<p>1.<strong>변수 <code>as</code> 강제할 타입</strong><br>2.<strong><code>&lt;강제할 타입&gt;</code> 변수</strong></p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> x = &lt;<span class="built_in">any</span>&gt; foo;</span><br><span class="line"><span class="comment">// is equivalent to:</span></span><br><span class="line"><span class="keyword">const</span> x = foo <span class="keyword">as</span> <span class="built_in">any</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="as-Foo-vs-lt-Foo-gt"><a href="#as-Foo-vs-lt-Foo-gt" class="headerlink" title="as Foo vs &lt;Foo&gt;"></a><code>as Foo</code> vs <code>&lt;Foo&gt;</code></h2><p><code>&lt;Foo&gt;</code>가 원조 <code>as Foo</code>가 뉴페이스인데, <code>as operator</code>는 사실 JSX 표현식을 지원하기 위해서 나왔다.</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//tsx</span></span><br><span class="line"><span class="keyword">const</span> foo: <span class="built_in">any</span>;</span><br><span class="line"><span class="keyword">const</span> bar = &lt;<span class="built_in">string</span>&gt; foo; <span class="comment">// bar is now of type "string"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//jsx</span></span><br><span class="line"><span class="keyword">const</span> foo = &lt;<span class="built_in">string</span>&gt;bar;</span><br><span class="line">&lt;<span class="regexp">/string&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Typescript 1.6에서 <code>.tsx</code> 파일 확장자와 <code>as operator</code>가 처음 소개 되었는데 기존의 Typescript에서 사용했던 <strong><code>&lt;any&gt;와 같은 접두어 방식</code>과 <code>JSX 표현식</code> 사이의 모호함을 없애고 일관성을 위해서 최근에 새로 만든 <code>as operator</code>의 사용을 권장한다.</strong> <del>라고 나와있는데 사실 JSX를 쓰는 것이 아니라면 둘 중 아무거나 사용해도 상관 없을 듯 하다. 하지만 난 쓰라는거 써야지</del></p>
+<h2 id="간단한-예제"><a href="#간단한-예제" class="headerlink" title="간단한 예제"></a>간단한 예제</h2><p>보통은 Union과 같은 여러가지의 타입을 가질 수 있는 데이터에서 타입을 강제로 지정하거나, superset이 되는 타입을 지정하는 경우(그 반대의 경우도), 혹은 Javascript 코드를 Typescript코드로 이식할 때 많이 쓰인다고 한다.</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;&#125;;</span><br><span class="line">foo.bar = <span class="number">123</span>; <span class="comment">// Error: property 'bar' does not exist on `&#123;&#125;`</span></span><br><span class="line">foo.bas = <span class="string">'hello'</span>; <span class="comment">// Error: property 'bas' does not exist on `&#123;&#125;`</span></span><br></pre></td></tr></table></figure>
+<p>위와 같은 Typescript 예제에서는 foo 객체에 <code>bar, bas</code>프로퍼티가 없으므로, 해당 프로퍼티에 값을 할당 할 수 없다는 에러가 발생하게 되는데 이를 Type Assertion을 적용하면 다음과 같이 간단하게 해결할 수 있다.</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> Foo &#123;</span><br><span class="line">    bar: <span class="built_in">number</span>;</span><br><span class="line">    bas: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> foo = &#123;&#125; <span class="keyword">as</span> Foo;</span><br><span class="line">foo.bar = <span class="number">123</span>;</span><br><span class="line">foo.bas = <span class="string">'hello'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="Type-Casting-VS-Type-Assertion"><a href="#Type-Casting-VS-Type-Assertion" class="headerlink" title="Type Casting VS Type Assertion"></a>Type Casting VS Type Assertion</h2><p>처음 Type Assertion을 접했을 때 형변환과 비슷한 느낌으로만 이해 하고 있었는데, 형변환의 개념이랑은 약간 차이가 있다.</p>
+<p>형변환(Type casting)은 <strong>런타임 환경을 지원하고 데이터의 실제 구조를 변경한다.</strong><br>Type Assertion은 <strong>컴파일 타임 구조</strong>이며 <strong>컴파일러가 코드를 분석하는 방법에 대한 힌트를 제공한다는 점</strong>에서 차이점이 있다.</p>
+<h2 id="사용은-신중히"><a href="#사용은-신중히" class="headerlink" title="사용은 신중히"></a>사용은 신중히</h2><p>Assertion을 사용하게 되면 레거시 코드 마이그레이션이 쉽게 허용이 되기 때문에 항상 신중하게 사용하자.</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> Foo &#123;</span><br><span class="line">    bar: <span class="built_in">number</span>;</span><br><span class="line">    bas: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> foo = &lt;Foo&gt; &#123;&#125;;</span><br><span class="line"><span class="comment">// ahhhh .... forget something?</span></span><br></pre></td></tr></table></figure>
+<p>예들 들어, 위와 같은 코드에서 foo에 대해 <code>autocomplete</code>를 제공하지만, 개발자(작성자)가 properties를 모두 작성하는 것을 까먹을 수도 있고, 나중에 리펙토링 할 때 쉽게 깨질 수 있다는 단점이 있다. (예: 새로운 property의 추가/삭제/수정 등..) 이런 단점들은 에러를 발생시킬 수 있는 요인이 될 수 있다.</p>
+<p>Typescript를 사용하면서 얼마나 자주 쓰일지는 모르겠지만, 잘 이해하고 사용하는 것이 좋을 것 같다. <del>뭐든지 잘 쓰면 좋지만 그게 어렵다는 점</del></p>
+<hr>
+<h3 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h3><p><a href="https://basarat.gitbooks.io/typescript/docs/types/type-assertion.html" rel="external nofollow noopener noreferrer" target="_blank">Typescript Handbook</a>을 참고하여 작성하였습니다.<br>설명이 부족하거나 틀린 부분이 있으면 댓글로 지적해주시면 감사하겠습니다.</p>
 
         </div>
         <footer class="article-footer">
@@ -217,7 +206,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://euntak.github.io/2017/10/19/javascript-this/" data-id="cjas7ez1i00062pvgalybrub6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://euntak.github.io/2017/12/04/typescript-type-assertions-md/" data-id="cjas7ez1b00012pvg62bcem3e" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -324,16 +313,12 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/10/20/javascript-hoisting/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Javascript Hoisting
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
+        <a href="/2017/12/01/typescript-basic-type-md/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Basic Types</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -524,7 +509,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'trofleveuntak';
     
     
-    var disqus_url = 'http://euntak.github.io/2017/10/19/javascript-this/';
+    var disqus_url = 'http://euntak.github.io/2017/12/04/typescript-type-assertions-md/';
     
     (function() {
     var dsq = document.createElement('script');

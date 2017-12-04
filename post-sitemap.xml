@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://euntak.github.io/2017/12/04/typescript-type-assertions-md/</loc>
+        <lastmod>2017-12-04T16:51:55.665Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://euntak.github.io/2017/12/01/typescript-basic-type-md/</loc>
-        <lastmod>2017-12-01T09:53:55.000Z</lastmod>
+        <lastmod>2017-12-04T16:26:55.536Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -23,16 +31,8 @@
     </url>
 
     <url>
-        <loc>http://euntak.github.io/2017/10/20/javascript-function-definition/</loc>
-        <lastmod>2017-11-28T14:55:55.537Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://euntak.github.io/2017/10/20/javascript-hoisting/</loc>
-        <lastmod>2017-11-28T14:55:55.537Z</lastmod>
+        <lastmod>2017-11-28T14:55:55.538Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,6 +40,14 @@
 
     <url>
         <loc>http://euntak.github.io/2017/10/19/javascript-this/</loc>
+        <lastmod>2017-11-28T14:55:55.538Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://euntak.github.io/2017/10/20/javascript-function-definition/</loc>
         <lastmod>2017-11-28T14:55:55.537Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
