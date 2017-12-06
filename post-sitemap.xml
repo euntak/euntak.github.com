@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://euntak.github.io/2017/12/05/typescript-type-alias-md/</loc>
+        <lastmod>2017-12-06T13:58:46.093Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://euntak.github.io/2017/12/04/typescript-type-assertions-md/</loc>
         <lastmod>2017-12-04T16:51:55.665Z</lastmod>
         <changefreq>weekly</changefreq>

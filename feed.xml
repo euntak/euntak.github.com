@@ -6,7 +6,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="http://euntak.github.io/"/>
-  <updated>2017-12-04T16:51:55.665Z</updated>
+  <updated>2017-12-06T13:58:46.093Z</updated>
   <id>http://euntak.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Type Alias</title>
+    <link href="http://euntak.github.io/2017/12/05/typescript-type-alias-md/"/>
+    <id>http://euntak.github.io/2017/12/05/typescript-type-alias-md/</id>
+    <published>2017-12-05T13:30:21.000Z</published>
+    <updated>2017-12-06T13:58:46.093Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Type-Alias"><a href="#Type-Alias" class="headerlink" title="Type Alias"></a>Type Alias</h1><p>Alias 뜻 그대로 별칭을 붙여주는 역할을 한다.</p><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name <span class="keyword">AS</span> alias_name</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure><p>위와 같은 데이터베이스 쿼리문에서 <code>AS</code>라는 키워드를 볼 수 있는데, 이는 <code>Alias</code>의 뜻을 가지며 실제로 그렇게 불린다.<br><strong>alias_name이 column_name의 별칭인 것이다.</strong> 이전 포스트(Type Assertion)에서 다루었던 <code>as</code>와 혼동하지 말자. <del>마땅히 떠오르는 예제가 이것밖에 없는데 하필</del></p><p>Typescript에서도 동일한 의미를 지닌다고 볼 수 있는데, Type에 별칭을 붙여주는 방식이 Type Alias인 것이다.</p><h2 id="문법"><a href="#문법" class="headerlink" title="문법"></a>문법</h2><p><a href="https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md#3.10" rel="external nofollow noopener noreferrer" target="_blank">Typescript Handbook</a>에는 이렇게 정의되어 있다.<br><code>type</code>&emsp;<em>BindingIdentifier</em>&emsp;<em>TypeParameters<sub>opt</sub></em>&emsp;<code>=</code>&emsp;<em>Type</em>&emsp;<code>;</code></p><p>예제를 살펴보자.</p><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> StringOrNumber = <span class="built_in">string</span> | <span class="built_in">number</span>;</span><br><span class="line"><span class="keyword">type</span> Text = <span class="built_in">string</span> | &#123; text: <span class="built_in">string</span> &#125;;</span><br><span class="line"><span class="keyword">type</span> NameLookup = Dictionary&lt;<span class="built_in">string</span>, Person&gt;;</span><br><span class="line"><span class="keyword">type</span> ObjectStatics = <span class="keyword">typeof</span> <span class="built_in">Object</span>;</span><br><span class="line"><span class="keyword">type</span> Callback&lt;T&gt; = <span class="function">(<span class="params">data: T</span>) =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line"><span class="keyword">type</span> Pair&lt;T&gt; = [T, T];</span><br><span class="line"><span class="keyword">type</span> Coordinates = Pair&lt;<span class="built_in">number</span>&gt;;</span><br><span class="line"><span class="keyword">type</span> Tree&lt;T&gt; = T | &#123; left: Tree&lt;T&gt;, right: Tree&lt;T&gt; &#125;;</span><br></pre></td></tr></table></figure><h2 id="언제-사용하는-걸까"><a href="#언제-사용하는-걸까" class="headerlink" title="언제 사용하는 걸까"></a>언제 사용하는 걸까</h2><p>딱히 정해져 있지 않는 것 같다. 보통 새로운 사용자 정의 타입을 사용하거나, Union Type과 같이 여러개의 타입을 지정하거나, Intersection Type을 지정 할 때 많이 사용하는 것 같다. 말로 설명하는 것 보다 코드를 보면 좀 더 명확하게 이해할 수 있을 것이다.</p><h3 id="불편"><a href="#불편" class="headerlink" title="불편"></a>불편</h3><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testFunc</span>(<span class="params">arg: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="title">string</span> | <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>testFunc</strong>함수는 받는 파라미터의 타입이 <code>string | number</code>이며, 리턴타입도 동일하다.<br>저런 형식의 함수가 하나면 저렇게 써도 무방하겠지만, 여러곳에서 저렇게 쓰인다면? interface를 만들어서 빼거나, Type alias로 지정하는 것이 코드를 유지보수하는데 있어서 훨씬 유리할 것이다.</p><h3 id="편안"><a href="#편안" class="headerlink" title="편안"></a>편안</h3><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> StringOrNumber = <span class="built_in">string</span> | <span class="built_in">number</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testFunc</span>(<span class="params">arg: StringOrNumber</span>): <span class="title">StringOrNumber</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Type-Alias-VS-Interface"><a href="#Type-Alias-VS-Interface" class="headerlink" title="Type Alias VS Interface"></a>Type Alias VS Interface</h2><p>type alias는 사용하다보면 interface와 비슷하다는 느낌을 받을 수 있을 것 같다.<br>사실 Interface와 비슷한 역할을 하지만, Interface와 차이점이 있는데 한번 살펴보도록 하자.</p><p>1.Interface는 <code>multiple merged declarations</code>를 지원한다.</p><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ..later</span></span><br><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  address: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> man: Person = &#123;</span><br><span class="line">    name: <span class="string">'name'</span>,</span><br><span class="line">    age: <span class="number">10</span>,</span><br><span class="line">    address: <span class="string">'address'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>위의 예제와 같이 <strong>중복된 interface선언</strong>에 대해서 Compiler는 중복 선언한 Interface를 하나로 merge해준다.</p><p>2.Interface는 <code>extends, implements</code>가 가능하다.</p><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">Interface A &#123;</span><br><span class="line">    <span class="comment">//some property</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Interface B <span class="keyword">extends</span> A &#123;</span><br><span class="line">    <span class="comment">//some property</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> AB <span class="keyword">implements</span> A,B &#123;</span><br><span class="line">    <span class="comment">// something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>위와 같이 Interface간에 <code>extends</code>와, Class에 <code>implements</code> 가능하다.</p><p>3.Interface는 새로운 타입을 만드는 것이라면, Type Alias는 만들어진 타입의 reference로 사용하는 것이다.</p><h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2><p>일반 객체 유형을 사용하는 경우 인터페이스가 더 나은 방법이다.<br>인터페이스로 쓸 수 없는 것을 쓰고 싶거나 타입에 뭔가 다른 이름을 주고 싶다면 type alias를 사용하자.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Type-Alias&quot;&gt;&lt;a href=&quot;#Type-Alias&quot; class=&quot;headerlink&quot; title=&quot;Type Alias&quot;&gt;&lt;/a&gt;Type Alias&lt;/h1&gt;&lt;p&gt;Alias 뜻 그대로 별칭을 붙여주는 역할을 한다.&lt;/p&gt;
+&lt;figu
+      
+    
+    </summary>
+    
+      <category term="Typescript" scheme="http://euntak.github.io/categories/Typescript/"/>
+    
+    
+      <category term="Typescript" scheme="http://euntak.github.io/tags/Typescript/"/>
+    
+  </entry>
   
   <entry>
     <title>Type Assertion</title>
